@@ -54,6 +54,8 @@ class Server:
             if row:
                 data.append(row)
             trueIdx += 1
+        while trueIdx not in idxs and trueIdx <= max(idxs):
+            trueIdx += 1
         return {
             'index': index,
             'next_index': trueIdx if trueIdx <= max(idxs) else None,
