@@ -57,7 +57,7 @@ server.get('/list_products/:itemId', async (req, res) => {
   const product = getItemById(itemId);
   const reservedStock = await getCurrentReservedStockById(itemId);
   if (!reservedStock) {
-    const reservedStock = 0;
+    reservedStock = 0;
   }
   if (product) {
     const item = {
